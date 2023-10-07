@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Navbar";
+import List from './List';
+import Counter from "./CounterClass";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const guitars = ["Strat", "Les Paul", "Explore"];
+    let stuff = List({title: "Guitars", items: guitars});
+
+    return (
+        <>
+            <Navbar title="lots of components"/>
+            <div className="container">
+                <Counter/>
+                <List
+                    title="Guitars"
+                    items={guitars}
+                    background='danger'
+                />
+            </div>
+        </>
+    );
 }
 
 export default App;
